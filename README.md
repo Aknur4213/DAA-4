@@ -1,5 +1,8 @@
 # DAA Assignment 4 — Dynamic Programming and String Algorithms
 
+## GitHub Repository
+
+[View the project on GitHub](https://github.com/Aknur4213/DAA-4)
 ## Project Description
 
 This project implements and compares five algorithms from Dynamic Programming and String Algorithms.
