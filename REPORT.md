@@ -27,16 +27,29 @@ n = 1000, 4000, 16000, 64000
 Recursive Edit Distance uses smaller sizes because
 its running time grows exponentially.
 
+
 ### 3. Input Types
 
 Edit Distance:
-- EQUAL: Two identical strings.
-- DIFFERENT: Two strings with no matching characters.
+- EQUAL: Both strings contain n copies of "A".
+  This shows the cost when every character matches.
+- DIFFERENT: The first string contains only "A",
+  and the second contains only "B".
+  This forces the recursive algorithm to explore
+  all three operations at each non-base state.
 
 String Search:
-- RANDOM: Randomly generated text and pattern.
-- WORST_CASE: Repeated characters designed to
-  cause many comparisons in Naive Search.
+- RANDOM: Random text and a 16-character pattern
+  generated from the alphabet {A, B, C, D}.
+  This represents ordinary search behavior.
+- WORST_CASE: Text contains only "A", while
+  the pattern contains 15 "A" characters
+  followed by "B".
+  This forces Naive Search to repeat many comparisons.
+
+All random inputs use the fixed seed 42.
+The search pattern length is fixed at 16.
+
 
 ### 4. Metrics
 

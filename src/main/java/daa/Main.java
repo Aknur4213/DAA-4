@@ -1,37 +1,28 @@
 
 package DAA;
-import DAA.search.*;
-import DAA.metrics.Metrics;
 
-import java.util.Arrays;
+import DAA.util.InputGenerator;
+import DAA.util.InputGenerator.InputPair;
 
 public class Main {
+
     public static void main(String[] args) {
 
-        String text = "ABABDABACDABABCABAB";
-        String pattern = "ABABCABAB";
+        InputPair equal = InputGenerator.editEqual(5);
+        InputPair different = InputGenerator.editDifferent(5);
+        InputPair random = InputGenerator.searchRandom(20);
+        InputPair worst = InputGenerator.searchWorstCase(20);
 
-        StringSearch naive = new NaiveSearch();
-        StringSearch kmp = new KMPSearch();
+        System.out.println("EQUAL:");
+        System.out.println(equal);
 
-        Metrics m1 = new Metrics();
-        Metrics m2 = new Metrics();
+        System.out.println("\nDIFFERENT:");
+        System.out.println(different);
 
-        System.out.println("Naive matches: "
-                + naive.search(text, pattern, m1));
+        System.out.println("\nRANDOM:");
+        System.out.println(random);
 
-        System.out.println("KMP matches: "
-                + kmp.search(text, pattern, m2));
-
-        System.out.println("Naive comparisons: "
-                + m1.getOperations());
-
-        System.out.println("KMP comparisons: "
-                + m2.getOperations());
-
-        KMPSearch kmpAlgorithm = new KMPSearch();
-
-        System.out.println("LPS: "
-                + Arrays.toString(kmpAlgorithm.lps(pattern)));
+        System.out.println("\nWORST CASE:");
+        System.out.println(worst);
     }
 }
